@@ -1,12 +1,353 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World AI</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IDLIX Indonesia - Tonton Acara TV & Film Online</title>
+  <link rel="icon" type="image/x-icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico">
+  
+  <!-- Google Fonts: Inter & Bebas Neue -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <h1>Hello World AI</h1>
+
+  <!-- ==========================================
+       NAVBAR
+       ========================================== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-left">
+      <a href="#" class="brand-logo" id="brand-home">
+        IDLIX
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#" class="nav-item active" data-filter="all">Beranda</a></li>
+          <li><a href="#" class="nav-item" data-filter="series">Acara TV</a></li>
+          <li><a href="#" class="nav-item" data-filter="movie">Film</a></li>
+          <li><a href="#" class="nav-item" data-filter="popular">Populer & Baru</a></li>
+          <li><a href="#" class="nav-item" data-filter="watchlist">Daftar Saya</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="nav-right">
+      <!-- Search Input -->
+      <div class="search-container">
+        <div class="search-box" id="search-box">
+          <button class="search-btn" id="search-toggle-btn" title="Cari film">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <input 
+            type="text" 
+            class="search-input" 
+            id="search-input" 
+            placeholder="Judul, genre, atau pemain..."
+            autocomplete="off"
+          >
+        </div>
+      </div>
+
+      <!-- Notification Bell -->
+      <button class="nav-icon-btn" id="notification-btn" title="Notifikasi">
+        <i class="fa-solid fa-bell"></i>
+        <span class="badge-dot"></span>
+      </button>
+
+      <!-- Profile Avatar & Dropdown -->
+      <div class="profile-container">
+        <button class="profile-avatar-btn">
+          <img 
+            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" 
+            alt="Profil" 
+            class="avatar-img"
+          >
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+        <div class="profile-dropdown">
+          <div class="dropdown-user">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" class="avatar-img" alt="User">
+            <span>Dimas (Utama)</span>
+          </div>
+          <div class="dropdown-user">
+            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80" class="avatar-img" alt="Anak-anak">
+            <span>Anak-anak</span>
+          </div>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-link" id="nav-open-watchlist"><i class="fa-solid fa-bookmark" style="margin-right: 8px;"></i> Daftar Saya</a>
+          <a class="dropdown-link"><i class="fa-solid fa-user-gear" style="margin-right: 8px;"></i> Kelola Profil</a>
+          <a class="dropdown-link"><i class="fa-solid fa-circle-question" style="margin-right: 8px;"></i> Pusat Bantuan</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-link" style="color: #ff5555;"><i class="fa-solid fa-arrow-right-from-bracket" style="margin-right: 8px;"></i> Keluar dari IDLIX</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       HERO BILLBOARD SECTION
+       ========================================== -->
+  <section class="hero-billboard" id="hero-billboard">
+    <div class="hero-overlay-v"></div>
+    <div class="hero-overlay-h"></div>
+    <div class="hero-content">
+      <div class="hero-badge-top">
+        <span class="badge-top10"><i class="fa-solid fa-trophy"></i> #1 HARI INI</span>
+        <span class="hero-match" id="hero-match">98% Cocok</span>
+      </div>
+      <h1 class="hero-title" id="hero-title">Cyber City 2099</h1>
+      <p class="hero-synopsis" id="hero-synopsis">
+        Di masa depan di mana kecerdasan buatan mengendalikan distrik metropolitan New Neo, seorang detektif sibernetik menemukan konspirasi di balik hilangnya kesadaran manusia murni terakhir.
+      </p>
+      <div class="hero-actions">
+        <button class="btn-play" id="hero-btn-play">
+          <i class="fa-solid fa-play"></i> Putar
+        </button>
+        <button class="btn-more-info" id="hero-btn-info">
+          <i class="fa-solid fa-circle-info"></i> Selengkapnya
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-side-info">
+      <button class="btn-sound-toggle" id="hero-sound-toggle" title="Matikan/Nyalakan Suara">
+        <i class="fa-solid fa-volume-high" id="hero-sound-icon"></i>
+      </button>
+      <div class="hero-age-badge" id="hero-age">18+</div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SEARCH RESULTS VIEW
+       ========================================== -->
+  <section class="search-results-section" id="search-results-section">
+    <div class="search-header">
+      <h2 class="search-title" id="search-title-text">Hasil Pencarian</h2>
+      <button class="search-clear-btn" id="search-clear-btn">
+        <i class="fa-solid fa-xmark"></i> Tutup Pencarian
+      </button>
+    </div>
+    <div class="search-grid" id="search-grid">
+      <!-- Search items rendered via JS -->
+    </div>
+  </section>
+
+  <!-- ==========================================
+       MAIN CATALOG ROWS
+       ========================================== -->
+  <main class="main-catalog" id="main-catalog">
+    <!-- Watchlist row (if user has items saved) -->
+    <div class="movie-row" id="watchlist-row" style="display: none;">
+      <div class="row-header">
+        <h3 class="row-title">❤️ Daftar Tontonan Saya</h3>
+        <span class="row-explore-text">Lihat Semua <i class="fa-solid fa-chevron-right"></i></span>
+      </div>
+      <div class="row-slider-container">
+        <button class="slider-arrow left" aria-label="Geser ke kiri"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="row-slider" id="watchlist-slider"></div>
+        <button class="slider-arrow right" aria-label="Geser ke kanan"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+
+    <!-- Dynamic Category Rows rendered from data.js -->
+    <div id="dynamic-rows"></div>
+  </main>
+
+  <!-- ==========================================
+       DETAIL MODAL ("SELENGKAPNYA")
+       ========================================== -->
+  <div class="modal-overlay" id="detail-modal">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Tutup modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-banner" id="modal-banner">
+        <div class="modal-banner-gradient"></div>
+        <div class="modal-banner-content">
+          <h2 class="modal-title" id="modal-title">Judul Film</h2>
+          <div class="modal-banner-actions">
+            <button class="btn-play" id="modal-btn-play">
+              <i class="fa-solid fa-play"></i> Putar
+            </button>
+            <button class="btn-circle" id="modal-btn-watchlist" title="Tambah ke Daftar Saya">
+              <i class="fa-solid fa-plus" id="modal-watchlist-icon"></i>
+            </button>
+            <button class="btn-circle" id="modal-btn-like" title="Sukai">
+              <i class="fa-solid fa-thumbs-up" id="modal-like-icon"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-grid">
+          <div class="modal-info-main">
+            <div class="modal-meta-row">
+              <span class="meta-match" id="modal-match">98% Cocok</span>
+              <span class="meta-age" id="modal-age">18+</span>
+              <span class="meta-duration" id="modal-duration">2j 14m</span>
+              <span class="meta-quality" id="modal-quality">4K Ultra HD</span>
+            </div>
+            <p class="modal-synopsis" id="modal-synopsis">
+              Deskripsi sinopsis film lengkap akan tampil di sini.
+            </p>
+          </div>
+
+          <div class="modal-details-side">
+            <div class="modal-detail-item">
+              <strong>Pemeran:</strong> <span id="modal-cast">Aktor 1, Aktor 2</span>
+            </div>
+            <div class="modal-detail-item">
+              <strong>Sutradara:</strong> <span id="modal-director">Sutradara</span>
+            </div>
+            <div class="modal-detail-item">
+              <strong>Genre:</strong> <span id="modal-genres">Aksi, Fiksi Ilmiah</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="similar-section">
+          <h3>Judul Serupa & Direkomendasikan</h3>
+          <div class="similar-grid" id="modal-similar-grid">
+            <!-- Similar items rendered via JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       CUSTOM NETFLIX VIDEO PLAYER MODAL
+       ========================================== -->
+  <div class="video-player-modal" id="video-player-modal">
+    <!-- HTML5 Video Element -->
+    <video class="player-video-element" id="netflix-video" playsinline></video>
+
+    <!-- Center Flash Icon (Play/Pause indicator) -->
+    <div class="player-center-icon" id="player-center-icon">
+      <i class="fa-solid fa-play" id="center-icon-symbol"></i>
+    </div>
+
+    <!-- Overlay Controls -->
+    <div class="player-controls-overlay" id="player-controls-overlay">
+      <!-- Top Bar -->
+      <div class="player-top-bar">
+        <button class="btn-player-back" id="btn-player-back" title="Kembali ke beranda (Esc)">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Kembali</span>
+        </button>
+        <div class="player-title-info">
+          <div class="player-movie-title" id="player-title-display">Judul Film</div>
+          <div class="player-movie-badge" id="player-quality-display">Ultra HD 4K • Dolby Atmos</div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="player-bottom-bar">
+        <!-- Timeline Slider -->
+        <div class="timeline-container" id="player-timeline">
+          <div class="timeline-buffer" id="player-buffer"></div>
+          <div class="timeline-progress" id="player-progress">
+            <div class="timeline-thumb"></div>
+          </div>
+          <div class="timeline-time-tooltip" id="player-timeline-tooltip">00:00</div>
+        </div>
+
+        <!-- Controls Row -->
+        <div class="controls-row">
+          <div class="controls-left">
+            <!-- Play/Pause -->
+            <button class="ctrl-btn play-pause-btn" id="ctrl-play-pause" title="Putar/Jeda (Spasi)">
+              <i class="fa-solid fa-play" id="ctrl-play-icon"></i>
+            </button>
+            <!-- Rewind 10s -->
+            <button class="ctrl-btn" id="ctrl-rewind-10" title="Mundur 10 detik">
+              <i class="fa-solid fa-rotate-left"></i>
+            </button>
+            <!-- Forward 10s -->
+            <button class="ctrl-btn" id="ctrl-forward-10" title="Maju 10 detik">
+              <i class="fa-solid fa-rotate-right"></i>
+            </button>
+            <!-- Volume Slider -->
+            <div class="volume-control-box">
+              <button class="ctrl-btn" id="ctrl-volume-btn" title="Suara / Mute (M)">
+                <i class="fa-solid fa-volume-high" id="ctrl-volume-icon"></i>
+              </button>
+              <div class="volume-slider-bar" id="ctrl-volume-bar">
+                <div class="volume-level" id="ctrl-volume-level"></div>
+              </div>
+            </div>
+            <!-- Time Display -->
+            <span class="time-display" id="ctrl-time-display">00:00 / 00:00</span>
+          </div>
+
+          <div class="controls-right">
+            <!-- Playback Speed -->
+            <select class="speed-select" id="ctrl-speed-select" title="Kecepatan Putar">
+              <option value="0.75">0.75x</option>
+              <option value="1" selected>1x Normal</option>
+              <option value="1.25">1.25x</option>
+              <option value="1.5">1.5x</option>
+            </select>
+            <!-- Audio / Subtitle Simulation -->
+            <button class="ctrl-btn" id="ctrl-subtitles-btn" title="Audio & Teks Terjemahan">
+              <i class="fa-solid fa-message"></i>
+            </button>
+            <!-- Fullscreen -->
+            <button class="ctrl-btn" id="ctrl-fullscreen-btn" title="Layar Penuh (F)">
+              <i class="fa-solid fa-expand" id="ctrl-fullscreen-icon"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       TOAST CONTAINER
+       ========================================== -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer">
+    <div class="footer-socials">
+      <i class="fa-brands fa-facebook-f"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-youtube"></i>
+    </div>
+    <ul class="footer-links">
+      <li class="footer-link"><a href="#">Deskripsi Audio</a></li>
+      <li class="footer-link"><a href="#">Pusat Bantuan</a></li>
+      <li class="footer-link"><a href="#">Kartu Hadiah</a></li>
+      <li class="footer-link"><a href="#">Pusat Media</a></li>
+      <li class="footer-link"><a href="#">Hubungan Investor</a></li>
+      <li class="footer-link"><a href="#">Lowongan Kerja</a></li>
+      <li class="footer-link"><a href="#">Ketentuan Penggunaan</a></li>
+      <li class="footer-link"><a href="#">Privasi</a></li>
+      <li class="footer-link"><a href="#">Pemberitahuan Hukum</a></li>
+      <li class="footer-link"><a href="#">Preferensi Cookie</a></li>
+      <li class="footer-link"><a href="#">Informasi Perusahaan</a></li>
+      <li class="footer-link"><a href="#">Hubungi Kami</a></li>
+    </ul>
+    <button class="footer-service-code">Kode Layanan</button>
+    <div class="footer-copyright">
+      © 2026 IDLIX Indonesia - Dibuat untuk Eksplorasi Pembelajaran
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
 </body>
+</html>
